@@ -1,0 +1,548 @@
+*{
+    box-sizing: border-box;
+}
+body{
+   background-color: #E5E5E5; 
+   margin: 0;
+   font-family: 'Roboto', sans-serif;
+}
+
+img{
+    display: block;
+}
+.container{
+max-width: 1200px;
+margin: 0 auto;
+padding: 60px 15px;
+}
+@media (max-width:1200px){
+    .container{
+        width: 830px;
+
+    }
+}
+@media (max-width:829px){
+    .sidebar{
+       /* display: none;*/
+       position: fixed;
+       top: 0;
+       left: 0;
+       margin-left: 0 !important;
+       background-color: white;
+       padding: 15px 15px;
+       box-shadow: 0px 0px 20px 4px rgb(0 0 0 / 37%);
+       overflow-y: auto;
+       bottom: 0;
+       transform: translateX(-150%);
+       transition: transform 0.2s ease-in;
+
+    }
+    .sidebar--mobile-active{
+        transform: translateX(-0%);
+    }
+}
+@media (max-width:829px){
+    .container{
+        width: 600px;
+        
+    }
+}
+@media (max-width:599px){
+    .cards-holder{
+        flex-direction: column;
+        align-items: center;   
+    }
+}
+
+.row{
+display: flex;
+justify-content: space-between;
+
+}
+.main{
+width: 870px;
+}
+.main+.sidebar{
+    margin-left: 30px;
+
+}
+.cards-holder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card-link>.card{
+margin-bottom: 30px;
+}
+a.card-link{
+    text-decoration: none;
+    transition: all opacity 0.9s ease-in;
+    display: inline-block;
+}
+a.card-link:hover{
+opacity: 0.9;
+transform: translateY(-5px);
+}
+.sidebar{
+width: 270px;
+min-width: 200px;
+
+}
+.card{
+   width: 270px;
+   position: relative;
+   background-color: white;
+}
+.card_badges {
+display: flex;
+position: absolute;
+top: 10px;
+left: 15px;
+right: 15px;
+}
+.card_badge--class{
+background-color: yellow;
+}
+.card_badge--credit{
+background-color: green;
+color: white;
+}
+
+.card_badges >*+*{
+    margin-left:10px;
+}
+.card_badge{
+    display: inline-block;
+    border-radius: 4px;
+    height: 22px;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 23px;
+}
+.card_content{
+    padding: 15px 15px 20px;
+}
+.card_title{
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.16;
+    color: #000000;
+}
+.card_term{
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #000000;
+}
+.card_metro{
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #000000;
+}
+.card_metro::before{
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 11px;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 10px;
+    background-image: url("images/Vector.png");
+    background-repeat: no-repeat;
+    background-size: initial;
+
+}
+.card_address{
+    font-size: 14px;
+    line-height: 1.14;
+    color: gray;
+}
+.card-link--hidden{
+    display: none !important;
+}
+.btn-more{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: silver;
+    border-radius: 4px;
+    padding-top: 24px;
+    padding-bottom: 30px;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    border: none;
+    color: #4290C9;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+}
+.btn-more:hover{
+    background: #cccccc;
+}
+
+.btn-more img{
+    
+    margin-right: 10px;
+}   
+
+.widget + .widget{
+    margin-top: 33px;
+}
+.widget--top-30{
+    margin-top: 30px !important;
+}
+.widget_title{
+font-weight: bold;
+line-height: 1.16;
+font-size: 18px;
+color: black;
+position: relative;
+padding-bottom: 15px;
+cursor: pointer;
+}
+
+
+.widget_title::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url("images//chevron-up.svg");
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: center;
+}
+.widget_title--active::after{
+    transform: rotate(180deg);
+}
+.widget_body--hidden{
+display: none;
+}
+.location_row{
+    display: flex;   
+}
+.location_row:first-child{
+    border-radius: 4px 4px 0px 0px;
+    overflow: hidden;
+    border: 1px solid lightgrey;
+}
+.location_row:last-child{
+    border-radius: 0px 0px 4px 4px;
+    overflow: hidden;
+    border: 1px solid lightgrey;
+    border-top: none;
+}
+.location_btn{
+    flex-grow: 1;
+    height: 50px;
+    padding: 0 15px;
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 50px;
+    border: none;
+    text-align: center;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+}
+
+.location_checkbox{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+.location_checkbox:checked + .location_btn{
+    background-color: rgb(236, 191, 113);
+}
+.location_checkbox:checked + .location_btn:hover{
+    background-color: rgb(133, 91, 13);
+}
+/*radio*/
+.radio{
+display: block;
+cursor: pointer;
+
+}
+.radio + .radio{
+    margin-top: 15px;
+
+}
+.radio_real{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+.radio_real:checked + .radio_fake::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    content: "";
+    border-radius: 50%;
+    background-color:black;
+    transform:translate(-50%, -50%);
+}
+.radio_real:checked~.radio_title{
+    font-weight: 500;
+
+}
+
+.radio_real:checked + .radio_fake{
+    background-color: rgb(236, 191, 113);
+}
+
+.radio_fake{
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: bottom;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #777777;
+    border-radius: 50%;
+}
+.radio_title{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.18;
+    color: black;
+}
+/*Checkbox*/
+.checkbox{
+display: block;
+    cursor: pointer;
+}
+.checkbox--hidden{
+    display: none;
+}
+.checkbox_real{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+.checkbox_fake{
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: bottom;
+    width: 20px;
+    height: 20px;
+    background-color:transparent;
+    border: 1px solid #777777;
+    border-radius: 2px;
+}
+.checkbox_title{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.18;
+    color: black;
+}
+.checkbox_real:checked + .checkbox_fake{
+    background-color: rgb(236, 191, 113);
+}
+.checkbox_real:checked~.checkbox_title{
+    font-weight: 500;
+
+}
+.checkbox_real:checked + .checkbox_fake::before{
+    width: 18px;
+    height: 18px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url("images/check.svg");
+    background-size: initial;
+    background-position: center;
+}
+.checkbox + .checkbox{
+    margin-top: 15px;
+}
+.widget_hidden{
+    display: none;
+}
+.widget_show-hidden{
+ background: transparent;
+ display: inline-block;
+ padding: 0;
+ border:none;
+ font-family: inherit;
+ font-style: normal;
+ font-weight: normal;
+ font-size: 19px;
+ line-height: 1.19;
+ cursor: pointer;
+ transition: 0.2s ease-in;
+ color: lightskyblue;
+ margin-top: 15px;
+}
+.widget_show-hidden:hover{
+    opacity: 0.8;
+    color: deepskyblue;
+    text-decoration: underline;
+}
+.toggle{
+cursor: pointer;
+}
+.toggle_fake{
+display:inline-block;
+width: 37px;
+height: 20px;
+background-color: dimgrey;
+border-radius: 10px;
+position: relative;
+vertical-align: bottom;
+margin-right: 10px;
+}
+
+.toggle_real{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+.toggle_fake::before{
+    transition: all 0.3s ease-in;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+.toggle_real:checked+.toggle_fake{
+    background-color:  #FFCF26;
+}
+.toggle_real:checked+.toggle_fake::before{
+    left: 20px;
+}
+.toggle_title{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.18;
+    color: black;
+}
+.toggle_real:checked ~.toggle_title{
+    font-weight: 500;
+}
+/*form*/
+.form-btn:hover{
+    background-color: #D6D6D6;
+    transition: 0.2s;
+}
+
+.form-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background-color:transparent;
+    text-align: center;
+    border: 1px solid silver;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+.form-btn img{
+    margin-right: 6px;
+}
+.form-btn+.form-btn{
+    margin-top: 10px;
+}
+.form-btn--submit{
+    background-color: #FFCF26;
+    border: none;
+    color: black;
+}
+.form-btn--submit:hover{
+    background-color: orange;
+}
+.toggle-sidebar{
+    display: none;
+    position: fixed;
+    z-index: 9;
+    right: 15px;
+    top: 8px;
+    width: 45px;
+    height: 45px;
+    background-color: yellowgreen;
+    border: none;
+    padding: 0;
+}
+@media(max-width: 829px){
+    .toggle-sidebar{
+    display: block;
+}
+}
+.menu-icon{
+    position: relative;
+    width:30px;
+    height: 5px;
+    background-color: white;
+}
+.menu-icon-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-icon::before{
+    position: absolute;
+    left: 0;
+    top: -10px;
+    content: '';
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+.menu-icon::after{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    content: '';
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+.menu-icon.menu-icon-active{
+    background-color: transparent;
+}
+.menu-icon.menu-icon-active::before{
+    transform: rotate(45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+.menu-icon.menu-icon-active::after{
+    transform: rotate(-45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
